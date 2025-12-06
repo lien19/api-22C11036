@@ -27,9 +27,15 @@ def read_server_file(file_path):
 
 # GET all items
 @app.route('/api/legal', methods=['GET'])
-def get_items():
+def get_legal():
     data = read_server_file('output_article_only.json')
     return Response(data, mimetype='application/json')
+
+@app.route('/api/qna', methods=['GET'])
+def get_qna():
+    data = read_server_file('output_QnA_1.json')
+    return Response(data, mimetype='application/json')
+
 
 
 # GET a specific item by ID
